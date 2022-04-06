@@ -1,0 +1,13 @@
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+note over server: browser is redirected
+server-->browser: HTTP 302 Found /exampleapp/notes
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server-->browser: HTML-code
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: main.js
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+note over browser: requested by main.js
+server-->browser: [{ content: "asdf", date: "2022-04-06T09:25:13.256Z" }, ...]
+note over browser: browser renders response data
